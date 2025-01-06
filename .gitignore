@@ -1,9 +1,1 @@
 .env
-/books
-/extracted_chunks
-/preprocessed_chunks
-/tagged_chunks.json
-/embeddings.json
-
-#-- KG
-/KG_info.json
