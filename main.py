@@ -22,6 +22,8 @@ chat = False
 turn = 0
 chat_id = None
 messages = []
+with open("prompt.md", "r") as file:
+    prompt = file.read()
 
 
 
@@ -30,6 +32,7 @@ deepseek_client = OpenAI(api_key=os.getenv("DEEPSEEK_API_KEY"), base_url=os.gete
 
 
 def ask_jarvis(messages):
+    # messages.insert(-1, {"role":"user","content":f"{prompt}"})
     response = deepseek_client.chat.completions.create( ## get response from the model
                         model=os.getenv("DEEPSEEK_MODEL"),
                         messages=messages,
